@@ -25,7 +25,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-
+import java.nio.file.Files;
 import ape.*;
 
 import junit.framework.TestCase;
@@ -38,8 +38,8 @@ public class CorruptTest extends TestCase{
 		try{
 			
 			
-			 f1 = File.createTempFile("test_ori", ".tst");
-			 f2 = File.createTempFile("test_final", ".tst");
+			 f1 = Files.createTempFile("test_ori", ".tst").toFile();
+			 f2 = Files.createTempFile("test_final", ".tst").toFile();
 			//File f2 = File.createTempFile("test_final", ".tst")
 			FileOutputStream fos1 = new FileOutputStream(f1);
 			FileOutputStream fos2 = new FileOutputStream(f2);
